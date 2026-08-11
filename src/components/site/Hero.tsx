@@ -79,9 +79,9 @@ export function Hero() {
           </p>
 
           <div className="flex flex-wrap items-start gap-3 md:col-span-4">
-            <MagneticButton href="#contact">Start a Project</MagneticButton>
-            <MagneticButton href="#work" variant="outline" withArrow={false}>
-              Explore Our Work
+            <MagneticButton href="/contact">Start a Project</MagneticButton>
+            <MagneticButton href="#services" variant="outline" withArrow={false}>
+              Explore Services
             </MagneticButton>
           </div>
 
