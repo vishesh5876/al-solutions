@@ -1,24 +1,89 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { ClientMarquee } from "@/components/site/ClientMarquee";
+import { Intro } from "@/components/site/Intro";
+import { Services } from "@/components/site/Services";
+import { Work } from "@/components/site/Work";
+import { MarqueeBreak } from "@/components/site/MarqueeBreak";
+import { Why } from "@/components/site/Why";
+import { Process } from "@/components/site/Process";
+import { Stats } from "@/components/site/Stats";
+import { Growth } from "@/components/site/Growth";
+import { Testimonials } from "@/components/site/Testimonials";
+import { About } from "@/components/site/About";
+import { FinalCta } from "@/components/site/FinalCta";
+import { Footer } from "@/components/site/Footer";
+import { CustomCursor } from "@/components/site/CustomCursor";
+import { ScrollProgress } from "@/components/site/ScrollProgress";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "AL Solutions — Web, App, Software & Digital Marketing Agency";
+const DESCRIPTION =
+  "AL Solutions builds high-performance websites, apps and software while helping brands grow through social media marketing, performance marketing and SEO.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "AL Solutions",
+          description: DESCRIPTION,
+          email: "hello@alsolutions.com",
+          areaServed: "Worldwide",
+          serviceType: [
+            "Website Design & Development",
+            "Web Application Development",
+            "Mobile App Development",
+            "Custom Software Development",
+            "Social Media Marketing",
+            "Performance Marketing",
+            "SEO Services",
+            "Branding & Digital Strategy",
+          ],
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="grain min-h-screen bg-background text-foreground">
+      <ScrollProgress />
+      <CustomCursor />
+      <Navbar />
+      <main>
+        <Hero />
+        <ClientMarquee />
+        <Intro />
+        <Services />
+        <Work />
+        <MarqueeBreak />
+        <Why />
+        <Process />
+        <Stats />
+        <Growth />
+        <Testimonials />
+        <About />
+        <FinalCta />
+      </main>
+      <Footer />
     </div>
   );
 }
