@@ -44,16 +44,27 @@ export function Navbar() {
           </a>
 
           <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                data-cursor="hover"
-                className="link-underline text-[0.75rem] tracking-[0.18em] text-muted-foreground uppercase transition-colors duration-300 hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.href.startsWith("/") ? (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  data-cursor="hover"
+                  className="link-underline text-[0.75rem] tracking-[0.18em] text-muted-foreground uppercase transition-colors duration-300 hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  data-cursor="hover"
+                  className="link-underline text-[0.75rem] tracking-[0.18em] text-muted-foreground uppercase transition-colors duration-300 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-4">
