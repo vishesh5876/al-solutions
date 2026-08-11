@@ -108,7 +108,7 @@ export function Navbar() {
             </nav>
             <div className="px-6 pb-10">
               <a
-                href="#contact"
+                href="mailto:Hello@alsolutions.in"
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between bg-foreground px-6 py-5 text-[0.75rem] tracking-[0.18em] text-background uppercase"
               >
@@ -116,7 +116,7 @@ export function Navbar() {
                 <ArrowUpRight className="h-4 w-4" />
               </a>
               <p className="mt-6 text-xs tracking-[0.16em] text-muted-foreground uppercase">
-                hello@alsolutions.com
+                Hello@alsolutions.in
               </p>
             </div>
           </motion.div>
