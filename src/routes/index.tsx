@@ -70,10 +70,10 @@ function Index() {
       <Navbar />
       <main>
         <Hero />
-        <ClientMarquee />
+        {/* <ClientMarquee /> */}
         <Intro />
         <Services />
-        <Work />
+        {/* <Work /> */}
         <MarqueeBreak />
         <Why />
         <Process />
