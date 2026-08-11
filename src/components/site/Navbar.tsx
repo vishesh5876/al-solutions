@@ -104,19 +104,36 @@ export function Navbar() {
               </button>
             </div>
             <nav aria-label="Mobile" className="flex flex-1 flex-col justify-center px-6">
-              {NAV_LINKS.map((link, i) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.18 + i * 0.07, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-display border-b border-line py-5 text-4xl tracking-tight"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
+              {NAV_LINKS.map((link, i) =>
+                link.href.startsWith("/") ? (
+                  <motion.div
+                    key={link.label}
+                    onClick={() => setOpen(false)}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.18 + i * 0.07, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Link
+                      to={link.href}
+                      className="font-display block border-b border-line py-5 text-4xl tracking-tight"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.18 + i * 0.07, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="font-display border-b border-line py-5 text-4xl tracking-tight"
+                  >
+                    {link.label}
+                  </motion.a>
+                )
+              )}
             </nav>
             <div className="px-6 pb-10">
               <a
