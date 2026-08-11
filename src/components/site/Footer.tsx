@@ -1,4 +1,5 @@
 import { ArrowUp } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { NAV_LINKS, FOOTER_SERVICES, SOCIALS } from "@/data/site";
 
 export function Footer() {
@@ -10,6 +11,13 @@ export function Footer() {
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Digital products and growth for ambitious businesses.
           </p>
+          <address className="mt-6 not-italic text-sm leading-relaxed text-muted-foreground">
+            808B, DLF Prime Tower
+            <br />
+            Okhla Phase I
+            <br />
+            New Delhi 110020, India
+          </address>
         </div>
 
         <nav aria-label="Footer navigation" className="md:col-span-2">
@@ -28,6 +36,15 @@ export function Footer() {
                 </a>
               </li>
             ))}
+            <li>
+              <Link
+                to="/contact"
+                data-cursor="hover"
+                className="link-underline text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -83,13 +100,16 @@ export function Footer() {
       <div className="border-t border-line">
         <div className="mx-auto flex max-w-[1600px] flex-col gap-4 px-6 py-8 text-[0.6875rem] tracking-[0.18em] text-muted-foreground uppercase md:flex-row md:items-center md:justify-between md:px-10">
           <p>© 2026 AL Solutions. All Rights Reserved.</p>
-          <div className="flex gap-6">
-            <a href="#top" className="link-underline hover:text-foreground">
+          <div className="flex flex-wrap gap-6">
+            <Link to="/privacy" className="link-underline hover:text-foreground">
               Privacy
-            </a>
-            <a href="#top" className="link-underline hover:text-foreground">
+            </Link>
+            <Link to="/terms" className="link-underline hover:text-foreground">
               Terms
-            </a>
+            </Link>
+            <Link to="/refund" className="link-underline hover:text-foreground">
+              Refund
+            </Link>
           </div>
         </div>
       </div>
