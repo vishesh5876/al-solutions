@@ -57,7 +57,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             <a
-              href="#contact"
+              href="/contact"
               data-cursor="hover"
               className="group hidden items-center gap-2 border border-line-strong px-5 py-3 text-[0.6875rem] tracking-[0.18em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background md:inline-flex"
             >
@@ -108,7 +108,7 @@ export function Navbar() {
             </nav>
             <div className="px-6 pb-10">
               <a
-                href="mailto:Hello@alsolutions.in"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between bg-foreground px-6 py-5 text-[0.75rem] tracking-[0.18em] text-background uppercase"
               >
