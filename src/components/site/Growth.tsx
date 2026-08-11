@@ -39,7 +39,7 @@ export function Growth() {
                 key={node}
                 initial={reduced ? false : { opacity: 0, y: 18 }}
                 whileInView={reduced ? {} : { opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-10% 0px" }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: i * 0.09, ease: [0.16, 1, 0.3, 1] }}
                 className="group flex items-center gap-6"
               >

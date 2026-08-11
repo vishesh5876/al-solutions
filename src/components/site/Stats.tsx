@@ -4,7 +4,7 @@ import { STATS } from "@/data/site";
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-15% 0px" });
+  const inView = useInView(ref, { once: true, amount: 0.3 });
   const reduced = useReducedMotion();
   const [display, setDisplay] = useState(0);
 

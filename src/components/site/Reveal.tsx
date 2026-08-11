@@ -18,7 +18,7 @@ export function Reveal({
       className={className}
       initial={reduced ? false : { opacity: 0, y }}
       whileInView={reduced ? {} : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-10% 0px" }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.9, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
@@ -45,7 +45,7 @@ export function RevealWords({
             className="inline-block"
             initial={reduced ? false : { y: "110%" }}
             whileInView={reduced ? {} : { y: 0 }}
-            viewport={{ once: true, margin: "-10% 0px" }}
+            viewport={{ once: true, amount: 0.15 }}
             transition={{
               duration: 1,
               delay: delay + i * 0.055,

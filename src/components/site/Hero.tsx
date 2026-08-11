@@ -57,7 +57,7 @@ export function Hero() {
 
         <h1 className="font-display mt-10 text-[clamp(2.6rem,8.2vw,7rem)] leading-[0.92] tracking-[-0.04em] uppercase">
           {LINES.map((line, i) => (
-            <span key={line} className="block overflow-hidden">
+            <span key={line} className="block overflow-hidden pb-[0.06em]">
               <motion.span
                 className="group inline-block"
                 initial={reduced ? false : { y: "110%" }}
