@@ -1,5 +1,5 @@
-import { motion, useReducedMotion } from "motion/react";
-import type { ReactNode } from "react";
+import { motion, useInView, useReducedMotion } from "motion/react";
+import { useRef, type ReactNode } from "react";
 
 export function Reveal({
   children,
@@ -36,16 +36,17 @@ export function RevealWords({
   delay?: number;
 }) {
   const reduced = useReducedMotion();
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, amount: 0.1 });
   const words = text.split(" ");
   return (
-    <span className={className}>
+    <span ref={ref} className={className}>
       {words.map((word, i) => (
         <span key={`${word}-${i}`} className="inline-block overflow-hidden align-bottom">
           <motion.span
             className="inline-block"
             initial={reduced ? false : { y: "110%" }}
-            whileInView={reduced ? {} : { y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
+            animate={reduced || inView ? { y: 0 } : { y: "110%" }}
             transition={{
               duration: 1,
               delay: delay + i * 0.055,
