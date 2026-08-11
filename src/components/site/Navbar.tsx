@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { NAV_LINKS } from "@/data/site";
 
 export function Navbar() {
@@ -43,27 +44,38 @@ export function Navbar() {
           </a>
 
           <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                data-cursor="hover"
-                className="link-underline text-[0.75rem] tracking-[0.18em] text-muted-foreground uppercase transition-colors duration-300 hover:text-foreground"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) =>
+              link.href.startsWith("/") ? (
+                <Link
+                  key={link.label}
+                  to={link.href}
+                  data-cursor="hover"
+                  className="link-underline text-[0.75rem] tracking-[0.18em] text-muted-foreground uppercase transition-colors duration-300 hover:text-foreground"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  data-cursor="hover"
+                  className="link-underline text-[0.75rem] tracking-[0.18em] text-muted-foreground uppercase transition-colors duration-300 hover:text-foreground"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="flex items-center gap-4">
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               data-cursor="hover"
               className="group hidden items-center gap-2 border border-line-strong px-5 py-3 text-[0.6875rem] tracking-[0.18em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background md:inline-flex"
             >
               Start a Project
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setOpen(true)}
@@ -92,31 +104,48 @@ export function Navbar() {
               </button>
             </div>
             <nav aria-label="Mobile" className="flex flex-1 flex-col justify-center px-6">
-              {NAV_LINKS.map((link, i) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.18 + i * 0.07, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                  className="font-display border-b border-line py-5 text-4xl tracking-tight"
-                >
-                  {link.label}
-                </motion.a>
-              ))}
+              {NAV_LINKS.map((link, i) =>
+                link.href.startsWith("/") ? (
+                  <motion.div
+                    key={link.label}
+                    onClick={() => setOpen(false)}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.18 + i * 0.07, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                  >
+                    <Link
+                      to={link.href}
+                      className="font-display block border-b border-line py-5 text-4xl tracking-tight"
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ) : (
+                  <motion.a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setOpen(false)}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.18 + i * 0.07, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                    className="font-display border-b border-line py-5 text-4xl tracking-tight"
+                  >
+                    {link.label}
+                  </motion.a>
+                )
+              )}
             </nav>
             <div className="px-6 pb-10">
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between bg-foreground px-6 py-5 text-[0.75rem] tracking-[0.18em] text-background uppercase"
               >
                 Start a Project
                 <ArrowUpRight className="h-4 w-4" />
-              </a>
+              </Link>
               <p className="mt-6 text-xs tracking-[0.16em] text-muted-foreground uppercase">
-                hello@alsolutions.com
+                Hello@alsolutions.in
               </p>
             </div>
           </motion.div>

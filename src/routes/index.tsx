@@ -21,6 +21,8 @@ const TITLE = "AL Solutions — Web, App, Software & Digital Marketing Agency";
 const DESCRIPTION =
   "AL Solutions builds high-performance websites, apps and software while helping brands grow through social media marketing, performance marketing and SEO.";
 
+const DOMAIN = "https://alsolutions.in";
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -29,12 +31,12 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: DOMAIN },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: DOMAIN }],
     scripts: [
       {
         type: "application/ld+json",
@@ -42,8 +44,9 @@ export const Route = createFileRoute("/")({
           "@context": "https://schema.org",
           "@type": "ProfessionalService",
           name: "AL Solutions",
+          url: DOMAIN,
           description: DESCRIPTION,
-          email: "hello@alsolutions.com",
+          email: "Hello@alsolutions.in",
           areaServed: "Worldwide",
           serviceType: [
             "Website Design & Development",

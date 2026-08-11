@@ -32,17 +32,17 @@ export function FinalCta() {
         </h2>
 
         <div className="mt-16 flex flex-col gap-10 border-t border-line pt-10 md:flex-row md:items-end md:justify-between">
-          <MagneticButton href="mailto:hello@alsolutions.com">Start a Project</MagneticButton>
+          <MagneticButton href="mailto:Hello@alsolutions.in">Start a Project</MagneticButton>
           <div className="md:text-right">
             <a
-              href="mailto:hello@alsolutions.com"
+              href="mailto:Hello@alsolutions.in"
               data-cursor="hover"
               className="link-underline font-display text-xl md:text-3xl"
             >
-              hello@alsolutions.com
+              Hello@alsolutions.in
             </a>
             <p className="mt-4 text-[0.6875rem] tracking-[0.22em] text-muted-foreground uppercase">
-              Available for selected projects worldwide.
+              808B, DLF Prime Tower, Okhla Phase I, New Delhi 110020, India.
             </p>
           </div>
         </div>
