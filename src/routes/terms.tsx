@@ -39,7 +39,7 @@ function TermsPage() {
             </span>
           </h1>
 
-          <div className="prose prose-invert mt-16 max-w-none border-t border-line pt-12">
+          <div className="mt-16 max-w-none border-t border-line pt-12">
             <Reveal>
               <p className="text-muted-foreground">Last updated: 12 August 2026</p>
             </Reveal>
