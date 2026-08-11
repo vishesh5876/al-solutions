@@ -1,6 +1,7 @@
 import { useRef, useState, type ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 
 type Props = {
   href: string;
