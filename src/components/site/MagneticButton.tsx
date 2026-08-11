@@ -30,8 +30,25 @@ export function MagneticButton({
     variant === "solid"
       ? "bg-foreground text-background hover:bg-muted-foreground"
       : "border border-line-strong text-foreground hover:bg-surface-2";
+  const isRoute = href.startsWith("/");
 
-  return (
+  const content = (
+    <>
+      <span>{children}</span>
+      {withArrow ? (
+        <ArrowUpRight
+          className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
+          aria-hidden="true"
+        />
+      ) : null}
+    </>
+  );
+
+  return isRoute ? (
+    <Link to={href} onClick={onClick} data-cursor="hover" className={`${base} ${styles} ${className}`}>
+      {content}
+    </Link>
+  ) : (
     <motion.a
       ref={ref}
       href={href}
@@ -50,13 +67,7 @@ export function MagneticButton({
       }}
       onMouseLeave={() => setOffset({ x: 0, y: 0 })}
     >
-      <span>{children}</span>
-      {withArrow ? (
-        <ArrowUpRight
-          className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1"
-          aria-hidden="true"
-        />
-      ) : null}
+      {content}
     </motion.a>
   );
 }
