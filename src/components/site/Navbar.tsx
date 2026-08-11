@@ -68,14 +68,14 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               data-cursor="hover"
               className="group hidden items-center gap-2 border border-line-strong px-5 py-3 text-[0.6875rem] tracking-[0.18em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background md:inline-flex"
             >
               Start a Project
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setOpen(true)}
