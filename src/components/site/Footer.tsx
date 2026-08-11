@@ -25,26 +25,29 @@ export function Footer() {
             Navigation
           </p>
           <ul className="mt-6 space-y-3">
-            {NAV_LINKS.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  data-cursor="hover"
-                  className="link-underline text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-            <li>
-              <Link
-                to="/contact"
-                data-cursor="hover"
-                className="link-underline text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
-              >
-                Contact
-              </Link>
-            </li>
+            {NAV_LINKS.map((link) =>
+              link.href.startsWith("/") ? (
+                <li key={link.label}>
+                  <Link
+                    to={link.href}
+                    data-cursor="hover"
+                    className="link-underline text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ) : (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    data-cursor="hover"
+                    className="link-underline text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              )
+            )}
           </ul>
         </nav>
 
