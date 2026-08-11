@@ -44,10 +44,29 @@ export function MagneticButton({
     </>
   );
 
+  const MotionLink = motion(Link);
+
   return isRoute ? (
-    <Link to={href} onClick={onClick} data-cursor="hover" className={`${base} ${styles} ${className}`}>
+    <MotionLink
+      ref={ref}
+      to={href}
+      onClick={onClick}
+      data-cursor="hover"
+      className={`${base} ${styles} ${className}`}
+      animate={{ x: offset.x, y: offset.y }}
+      transition={{ type: "spring", stiffness: 220, damping: 18 }}
+      onMouseMove={(e) => {
+        if (reduced || !ref.current) return;
+        const rect = ref.current.getBoundingClientRect();
+        setOffset({
+          x: (e.clientX - (rect.left + rect.width / 2)) * 0.22,
+          y: (e.clientY - (rect.top + rect.height / 2)) * 0.3,
+        });
+      }}
+      onMouseLeave={() => setOffset({ x: 0, y: 0 })}
+    >
       {content}
-    </Link>
+    </MotionLink>
   ) : (
     <motion.a
       ref={ref}
