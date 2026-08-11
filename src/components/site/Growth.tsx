@@ -49,16 +49,6 @@ export function Growth() {
                 <span className="font-display flex-1 border-b border-line py-4 text-xl tracking-[0.04em] uppercase transition-colors duration-500 group-hover:text-foreground md:text-2xl">
                   {node}
                 </span>
-                {i < GROWTH_CHAIN.length - 1 ? (
-                  <motion.span
-                    aria-hidden="true"
-                    initial={reduced ? false : { scaleY: 0 }}
-                    whileInView={reduced ? {} : { scaleY: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: 0.1 + i * 0.09 }}
-                    className="absolute h-0 w-px origin-top"
-                  />
-                ) : null}
               </motion.li>
             ))}
           </ol>
