@@ -87,6 +87,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "AL Solutions" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:title", content: "AL Solutions — Digital Agency" },
+      { name: "twitter:title", content: "AL Solutions — Digital Agency" },
+      { property: "og:description", content: "AL Solutions is a digital agency building websites, apps, software and growth for ambitious brands." },
+      { name: "twitter:description", content: "AL Solutions is a digital agency building websites, apps, software and growth for ambitious brands." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55e3eabcd03f02d096803e598d11b529/id-preview-233cafef--1af0b811-91f9-4222-86d2-110cb909ea77.lovable.app-1786473123416.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/55e3eabcd03f02d096803e598d11b529/id-preview-233cafef--1af0b811-91f9-4222-86d2-110cb909ea77.lovable.app-1786473123416.png" },
     ],
     links: [
       {
@@ -99,7 +105,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap",
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),
   shellComponent: RootShell,
