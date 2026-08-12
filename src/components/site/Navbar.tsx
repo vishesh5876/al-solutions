@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Phone } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { NAV_LINKS } from "@/data/site";
 import logoAsset from "@/assets/alnew.png.asset.json";
@@ -37,7 +37,7 @@ export function Navbar() {
             href="#top"
             data-cursor="hover"
             aria-label="AL Solutions — home"
-            className="relative inline-block h-10 w-auto"
+            className="relative inline-block h-20 w-auto"
           >
             <img
               src={logoAsset.url}
@@ -150,6 +150,13 @@ export function Navbar() {
               <p className="mt-6 text-xs tracking-[0.16em] text-muted-foreground uppercase">
                 Hello@alsolutions.in
               </p>
+              <a
+                href="tel:+919518661588"
+                className="mt-2 inline-flex items-center gap-2 text-xs tracking-[0.16em] text-muted-foreground uppercase transition-colors hover:text-foreground"
+              >
+                <Phone className="h-3.5 w-3.5" />
+                +91 95186 61588
+              </a>
             </div>
           </motion.div>
         ) : null}

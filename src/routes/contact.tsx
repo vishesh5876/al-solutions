@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal, RevealWords } from "@/components/site/Reveal";
 
@@ -42,7 +42,7 @@ function ContactPage() {
             </span>
           </h1>
 
-          <div className="mt-20 grid gap-12 border-t border-line pt-12 md:grid-cols-2">
+          <div className="mt-20 grid gap-12 border-t border-line pt-12 md:grid-cols-3">
             <Reveal>
               <a
                 href="mailto:Hello@alsolutions.in"
@@ -62,6 +62,24 @@ function ContactPage() {
             </Reveal>
 
             <Reveal delay={0.1}>
+              <a
+                href="tel:+919518661588"
+                data-cursor="hover"
+                className="group block"
+              >
+                <div className="flex items-center gap-4">
+                  <Phone className="h-5 w-5 text-muted-foreground" />
+                  <span className="text-[0.625rem] tracking-[0.26em] text-muted-foreground uppercase">
+                    Phone
+                  </span>
+                </div>
+                <p className="link-underline font-display mt-4 text-2xl md:text-4xl">
+                  +91 95186 61588
+                </p>
+              </a>
+            </Reveal>
+
+            <Reveal delay={0.2}>
               <div className="flex items-start gap-4">
                 <MapPin className="mt-1 h-5 w-5 shrink-0 text-muted-foreground" />
                 <div>
