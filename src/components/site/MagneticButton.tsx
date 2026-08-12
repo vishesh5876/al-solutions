@@ -21,6 +21,8 @@ export function MagneticButton({
   withArrow = true,
   className = "",
   onClick,
+  target,
+  rel,
 }: Props) {
   const ref = useRef<HTMLAnchorElement>(null);
   const reduced = useReducedMotion();
@@ -74,6 +76,8 @@ export function MagneticButton({
       ref={ref}
       href={href}
       onClick={onClick}
+      target={target}
+      rel={rel}
       data-cursor="hover"
       className={`${base} ${styles} ${className}`}
       animate={{ x: offset.x, y: offset.y }}
