@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { NAV_LINKS } from "@/data/site";
+import logoAsset from "@/assets/alnew.png.asset.json";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -36,11 +37,13 @@ export function Navbar() {
             href="#top"
             data-cursor="hover"
             aria-label="AL Solutions — home"
-            className="font-display text-sm leading-[0.95] tracking-[0.14em] uppercase"
+            className="relative inline-block h-10 w-auto"
           >
-            AL
-            <br />
-            Solutions
+            <img
+              src={logoAsset.url}
+              alt="AL Solutions"
+              className="h-full w-auto object-contain"
+            />
           </a>
 
           <nav aria-label="Primary" className="hidden items-center gap-9 md:flex">
