@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { NAV_LINKS } from "@/data/site";
+import logoAsset from "@/assets/alnew.png.asset.json";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
