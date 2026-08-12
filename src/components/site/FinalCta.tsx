@@ -32,7 +32,9 @@ export function FinalCta() {
         </h2>
 
         <div className="mt-16 flex flex-col gap-10 border-t border-line pt-10 md:flex-row md:items-end md:justify-between">
-          <MagneticButton href="mailto:Hello@alsolutions.in">Start a Project</MagneticButton>
+          <MagneticButton href="https://wa.me/919518661588" target="_blank" rel="noopener noreferrer">
+            Start a Project
+          </MagneticButton>
           <div className="md:text-right">
             <a
               href="mailto:Hello@alsolutions.in"

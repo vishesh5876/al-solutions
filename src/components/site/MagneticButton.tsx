@@ -10,6 +10,8 @@ type Props = {
   withArrow?: boolean;
   className?: string;
   onClick?: () => void;
+  target?: string;
+  rel?: string;
 };
 
 export function MagneticButton({
