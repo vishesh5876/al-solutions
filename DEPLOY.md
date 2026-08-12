@@ -1,7 +1,6 @@
 # Deploying AL Solutions to Cloudflare Workers
 
-The app builds to a Cloudflare Worker (SSR) plus static assets. Nitro generates
-`dist/server/wrangler.json` during the build, so no hand-written Wrangler config is needed.
+The app builds to a Cloudflare Worker (SSR) plus static assets. A root `wrangler.jsonc` is committed so Cloudflare (CLI, dashboard, or Workers Builds) detects the project automatically.
 
 ## One-time setup
 
@@ -16,7 +15,7 @@ The app builds to a Cloudflare Worker (SSR) plus static assets. Nitro generates
 bun run deploy
 ```
 
-This runs `vite build`, then `wrangler deploy --config dist/server/wrangler.json --name al-solutions`.
+This runs `vite build`, then `wrangler deploy` using the root `wrangler.jsonc`.
 The worker goes live at `https://al-solutions.<your-subdomain>.workers.dev`.
 
 ## Test the Worker locally
@@ -41,7 +40,16 @@ Cloudflare issues the TLS certificate automatically.
 Server-side values are read inside server functions via `process.env`. Set them with:
 
 ```bash
-bunx wrangler secret put MY_SECRET --name al-solutions
+bunx wrangler secret put MY_SECRET
 ```
 
 Client-visible values must be `VITE_*` and are baked in at build time.
+## Deploying from the Cloudflare dashboard (Workers Builds / Git)
+
+Cloudflare reads the committed `wrangler.jsonc`, so set:
+
+- Build command: `bun run build` (or `npm run build`)
+- Deploy command: `bunx wrangler deploy` (default)
+
+If you ever see "No Wrangler configuration detected", the `wrangler.jsonc` at the
+repo root is missing from the pushed commit.
