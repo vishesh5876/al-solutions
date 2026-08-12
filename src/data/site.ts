@@ -182,6 +182,4 @@ export const FOOTER_SERVICES = [
 export const SOCIALS = [
   { label: "Instagram", href: "https://www.instagram.com/alsolutions.in" },
   { label: "LinkedIn", href: "https://in.linkedin.com/company/alsolutionsin" },
-  { label: "Behance", href: "#contact" },
-  { label: "Dribbble", href: "#contact" },
 ];
