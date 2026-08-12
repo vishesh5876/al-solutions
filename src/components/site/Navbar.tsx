@@ -71,14 +71,16 @@ export function Navbar() {
           </nav>
 
           <div className="flex items-center gap-4">
-            <Link
-              to="/contact"
+            <a
+              href="https://wa.me/919518661588"
+              target="_blank"
+              rel="noopener noreferrer"
               data-cursor="hover"
               className="group hidden items-center gap-2 border border-line-strong px-5 py-3 text-[0.6875rem] tracking-[0.18em] uppercase transition-colors duration-500 hover:bg-foreground hover:text-background md:inline-flex"
             >
               Start a Project
               <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </Link>
+            </a>
             <button
               type="button"
               onClick={() => setOpen(true)}
@@ -139,14 +141,16 @@ export function Navbar() {
               )}
             </nav>
             <div className="px-6 pb-10">
-              <Link
-                to="/contact"
+              <a
+                href="https://wa.me/919518661588"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="flex items-center justify-between bg-foreground px-6 py-5 text-[0.75rem] tracking-[0.18em] text-background uppercase"
               >
                 Start a Project
                 <ArrowUpRight className="h-4 w-4" />
-              </Link>
+              </a>
               <p className="mt-6 text-xs tracking-[0.16em] text-muted-foreground uppercase">
                 Hello@alsolutions.in
               </p>
