@@ -1,6 +1,7 @@
 import { ArrowUp } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { NAV_LINKS, FOOTER_SERVICES, SOCIALS } from "@/data/site";
+import logoAsset from "@/assets/alnew.png.asset.json";
 
 export function Footer() {
   return (
