@@ -25,6 +25,14 @@ export function Footer() {
             <br />
             New Delhi 110020, India
           </address>
+          <a
+            href="tel:+919518661588"
+            data-cursor="hover"
+            className="mt-3 inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
+          >
+            <Phone className="h-4 w-4" />
+            +91 95186 61588
+          </a>
         </div>
 
         <nav aria-label="Footer navigation" className="md:col-span-2">
