@@ -8,7 +8,13 @@ export function Footer() {
     <footer className="border-t border-line">
       <div className="mx-auto grid max-w-[1600px] gap-12 px-6 py-20 md:grid-cols-12 md:px-10">
         <div className="md:col-span-4">
-          <p className="font-display text-2xl tracking-[0.06em] uppercase">AL Solutions</p>
+          <div className="relative h-14 w-auto">
+            <img
+              src={logoAsset.url}
+              alt="AL Solutions"
+              className="h-full w-auto object-contain"
+            />
+          </div>
           <p className="mt-5 max-w-xs text-sm leading-relaxed text-muted-foreground">
             Digital products and growth for ambitious businesses.
           </p>
