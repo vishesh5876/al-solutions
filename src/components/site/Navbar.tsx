@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Menu, X, ArrowUpRight, Phone } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { NAV_LINKS } from "@/data/site";
-import logoAsset from "@/assets/alnew.png.asset.json";
+import logoAsset from "@/assets/alnew.png";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,7 +40,7 @@ export function Navbar() {
             className="relative inline-block h-20 w-auto"
           >
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="AL Solutions"
               className="h-full w-auto object-contain"
             />

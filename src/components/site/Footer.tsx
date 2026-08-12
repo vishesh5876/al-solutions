@@ -1,7 +1,7 @@
 import { ArrowUp, Phone } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { NAV_LINKS, FOOTER_SERVICES, SOCIALS } from "@/data/site";
-import logoAsset from "@/assets/alnew.png.asset.json";
+import logoAsset from "@/assets/alnew.png";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
         <div className="md:col-span-4">
           <div className="relative h-14 w-auto">
             <img
-              src={logoAsset.url}
+              src={logoAsset}
               alt="AL Solutions"
               className="h-full w-auto object-contain"
             />
