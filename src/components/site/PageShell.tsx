@@ -3,6 +3,7 @@ import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 import { CustomCursor } from "./CustomCursor";
 import { ScrollProgress } from "./ScrollProgress";
+import { WhatsAppButton } from "./WhatsAppButton";
 
 export function PageShell({ children }: { children: ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       <Navbar />
       <main>{children}</main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

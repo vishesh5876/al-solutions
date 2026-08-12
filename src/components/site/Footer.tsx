@@ -91,13 +91,15 @@ export function Footer() {
           </p>
           <ul className="mt-6 space-y-3">
             {SOCIALS.map((social) => (
-              <li key={social}>
+              <li key={social.label}>
                 <a
-                  href="#contact"
+                  href={social.href}
+                  target={social.href.startsWith("http") ? "_blank" : undefined}
+                  rel={social.href.startsWith("http") ? "noopener noreferrer" : undefined}
                   data-cursor="hover"
                   className="link-underline text-sm text-muted-foreground transition-colors duration-300 hover:text-foreground"
                 >
-                  {social}
+                  {social.label}
                 </a>
               </li>
             ))}

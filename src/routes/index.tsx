@@ -16,6 +16,7 @@ import { FinalCta } from "@/components/site/FinalCta";
 import { Footer } from "@/components/site/Footer";
 import { CustomCursor } from "@/components/site/CustomCursor";
 import { ScrollProgress } from "@/components/site/ScrollProgress";
+import { WhatsAppButton } from "@/components/site/WhatsAppButton";
 
 const TITLE = "AL Solutions — Web, App, Software & Digital Marketing Agency";
 const DESCRIPTION =
@@ -87,6 +88,7 @@ function Index() {
         <FinalCta />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
