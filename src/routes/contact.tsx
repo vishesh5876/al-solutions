@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { PageShell } from "@/components/site/PageShell";
 import { Reveal, RevealWords } from "@/components/site/Reveal";
 

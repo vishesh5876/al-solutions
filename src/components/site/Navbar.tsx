@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { Menu, X, ArrowUpRight, Phone } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { NAV_LINKS } from "@/data/site";
 import logoAsset from "@/assets/alnew.png.asset.json";
